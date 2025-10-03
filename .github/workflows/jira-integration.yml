@@ -10,7 +10,7 @@ jobs:
     jira-integration:
         uses: T-ESP-ASSTAGJ/infra/.github/workflows/reusable-jira.yml@main
         with:
-            repository_name: "client"
+            repository_name: "web"
             issue_prefix: "TEM"
             jira_url: "https://t-esp-asstagj.atlassian.net"
             jira_mail: "jamly.pro@gmail.com"

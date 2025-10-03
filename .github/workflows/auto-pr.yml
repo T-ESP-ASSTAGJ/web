@@ -12,7 +12,7 @@ jobs:
   auto-pr:
     uses: T-ESP-ASSTAGJ/infra/.github/workflows/reusable-autopr.yml@main
     with:
-      repository_name: "client"
+      repository_name: "web"
       dev_branch: "staging"
       prod_branch: "main"
       dev_tag: "#STAGING"
