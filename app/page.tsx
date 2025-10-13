@@ -7,7 +7,7 @@ export default function Home() {
 	useEffect(() => {
 		const fetchUsers = async () => {
 			try {
-				const res = await fetch(`https://localhost/api/users`);
+				const res = await fetch(`/api/users`);
 				const data = await res.json();
 				console.log("Users:", data);
 			} catch (err) {
