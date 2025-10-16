@@ -86,10 +86,10 @@ export const PostList = ({ posts }: PostListProps) => {
                     type="button"
                     onClick={() => scrollToIndex(index - 1)}
                     disabled={index === 0}
-                    aria-label="Voir le post précédent"
-                    title="Post précédent"
-                    className="pointer-events-auto h-12 w-12 rounded-full bg-white/80 dark:bg-neutral-900/80 border border-black/10 dark:border-white/10 backdrop-blur
-                    shadow-lg flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95"
+                    aria-label="See last post"
+                    title="Previous Post"
+                    className="pointer-events-auto h-12 w-12 rounded-full bg-white/80 dark:bg-neutral-800 border border-black/10 dark:border-white/10 backdrop-blur
+                    shadow-lg flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95 cursor-pointer hover:bg-neutral-700"
                 >
                     <ChevronUp />
                 </button>
@@ -98,10 +98,11 @@ export const PostList = ({ posts }: PostListProps) => {
                     type="button"
                     onClick={() => scrollToIndex(index + 1)}
                     disabled={index === posts.length - 1}
-                    aria-label="Voir le post suivant"
-                    title="Post suivant"
-                    className="pointer-events-auto h-12 w-12 rounded-full bg-white/80 dark:bg-neutral-900/80 border border-black/10
-                    dark:border-white/10 backdrop-blur shadow-lg flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95"
+                    aria-label="See next post"
+                    title="Next post"
+                    className="pointer-events-auto h-12 w-12 rounded-full bg-white/80 dark:bg-neutral-800 border border-black/10
+                    dark:border-white/10 backdrop-blur shadow-lg flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95 cursor-pointer
+                    hover:bg-neutral-700"
                 >
                     <ChevronDown />
                 </button>

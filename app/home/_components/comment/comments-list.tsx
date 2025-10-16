@@ -7,9 +7,9 @@ import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Bookmark, CircleAlert, Heart, MessageSquarePlus, Play, Send } from "lucide-react";
 import { getYearFromDate } from "../../../../helpers/format-date-helper";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../../../../components/ui/sheet";
 import Commentary from "./commentary";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Avatar, AvatarFallback, AvatarImage} from "../../../../components/ui/avatar";
 
 interface ICommentProps {
 	music: IMusic;

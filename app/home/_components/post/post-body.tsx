@@ -15,7 +15,7 @@ export const PostBody = ({ music, photo }: PostBodyProps) => {
 	const toggle = () => setShowPhoto((s) => !s);
 
 	return (
-		<div className="relative mx-auto flex h-[560px] w-[640px] select-none items-center justify-center">
+		<div className="relative mx-auto flex h-[640px] w-[640px] select-none items-center justify-center">
 			<div
 				className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 shadow-sm"
 				style={{ borderWidth: 3, borderColor: "rgba(50,50,50,0.4)" }}

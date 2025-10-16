@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../../components/ui/avatar";
 import { ThumbsUp } from "lucide-react";
 import type { IComment } from "../../../../types/comments/comment.types";
 import { timeAgo } from "../../../../helpers/format-date-helper";

@@ -31,24 +31,24 @@ export const PostFooter = ({ music, stats, comments,}: PostFooterProps) => {
 				</div>
 				<div>
 					<div className={"flex flex-row items-center gap-4 pt-3 pr-1 pb-5 pl-1"}>
-						<div className={"h-14"}>
-							<Button className={"flex flex-row items-center gap-2 cursor-pointer"}>
-								<ThumbsUp size={20} />
-								<p>
-									{stats.likes}
-								</p>
+						<div className={"flex flex-col gap-1.5"}>
+							<Button className={"flex flex-row items-center gap-2 cursor-pointer rounded-full size-13 bg-neutral-800 hover:bg-neutral-700 [&>svg]:!size-5"}>
+								<ThumbsUp  color={"white"} strokeWidth={"2"} />
 							</Button>
+							<p className={"text-center text-sm font-medium"}>
+								{stats.likes}
+							</p>
 						</div>
-						<div className={"h-14"}>
-							<CommentsSheet music={music} comments={comments}>
-								<Button className={"flex flex-row items-center gap-2 cursor-pointer"}>
-									<MessageCircle size={20} />
-									<p>
-										{stats.comments}
-									</p>
+						<CommentsSheet music={music} comments={comments}>
+							<div className={"flex flex-col gap-1.5"}>
+								<Button className={"flex flex-row items-center gap-2 cursor-pointer rounded-full size-13 bg-neutral-800 hover:bg-neutral-700 [&>svg]:!size-5"}>
+									<MessageCircle color={"white"} strokeWidth={"2"} />
 								</Button>
-							</CommentsSheet>
-						</div>
+								<p className={"text-center text-sm font-medium"}>
+									{stats.comments}
+								</p>
+							</div>
+						</CommentsSheet>
 					</div>
 				</div>
 			</div>

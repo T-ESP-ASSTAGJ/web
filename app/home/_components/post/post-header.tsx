@@ -1,6 +1,6 @@
 import type { IUserPost } from "../../_types/post.types";
 import { formatDate } from "../../../../helpers/format-date-helper";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../../components/ui/avatar";
 
 type PostHeaderProps = {
 	user_post: IUserPost;
