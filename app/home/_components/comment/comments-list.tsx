@@ -35,7 +35,7 @@ export function CommentsSheet({music, comments, children, open, onOpenChange}: I
 		<Sheet open={open} onOpenChange={onOpenChange}>
 			<SheetTrigger asChild>{children}</SheetTrigger>
 
-			<SheetContent side="right" className="w-full border-l bg-[#0a0a0a] text-white sm:max-w-md md:max-w-md lg:max-w-xl">
+			<SheetContent side="right" className="w-full border-l bg-[#181818] text-white sm:max-w-md md:max-w-md lg:max-w-xl">
 				<SheetHeader>
 					<SheetTitle className="sr-only">Comments</SheetTitle>
 					<div className="flex items-start justify-between gap-4 p-2">
@@ -78,7 +78,7 @@ export function CommentsSheet({music, comments, children, open, onOpenChange}: I
 					)}
 				</div>
 
-				<div className="sticky bottom-0 z-50 border-t border-white/10 bg-[#0a0a0a]/95 backdrop-blur px-4 py-3">
+				<div className="sticky bottom-0 z-50 border-t border-white/10 bg-[#181818]/95 backdrop-blur px-4 py-3">
 					<form className="flex items-center gap-3" onSubmit={handleSend}>
 						<Avatar className="h-8 w-8">
 							<AvatarImage src="https://github.com/shadcn.png" />
