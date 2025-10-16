@@ -49,7 +49,7 @@ export const PostBody = ({ music, photo }: PostBodyProps) => {
 				<motion.img
 					src={showPhoto ? music.music_cover : photo}
 					alt={showPhoto ? "Cover thumb" : "Photo thumb"}
-					className="absolute inset-0 h-full w-full object-cover"
+					className="absolute inset-0 h-full w-full object-cover cursor-pointer"
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.3 }}
 					draggable={false}
