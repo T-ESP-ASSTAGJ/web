@@ -1,9 +1,18 @@
-"use client";
+const fetchUsers = async () => {
+	try {
+		const res = await fetch(`https://localhost/api/users`);
+		const data = await res.json();
+		console.log("Users:", data);
+	} catch (err) {
+		console.error("Erreur API:", err);
+	}
+};
 
-import { useEffect } from "react";
+export default async function RootPage() {
+	const users = await fetchUsers();
 
-export default function Home() {
-	console.log("Home page");
+	console.log(users);
+  
 	useEffect(() => {
 		const fetchUsers = async () => {
 			try {
@@ -19,8 +28,6 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="container mx-auto max-w-3xl px-4 py-2">
-			<pre className="overflow-x-auto font-mono text-sm">ROOT PAGE</pre>
-		</div>
+		<></>
 	);
 }
