@@ -1,15 +1,15 @@
 "use client"
 
 import React, { useState } from "react";
-import type { ICommentResponse } from "../../../../types/comments/comment.types";
+import type { ICommentResponse } from "../../../../../types/comments/comment.types";
 import type { IMusic } from "../../_types/post.types";
-import { Button } from "../../../../components/ui/button";
-import { Input } from "../../../../components/ui/input";
+import { Button } from "../../../../../components/ui/shadcn/button";
+import { Input } from "../../../../../components/ui/shadcn/input";
 import { Bookmark, CircleAlert, Heart, MessageSquarePlus, Play, Send } from "lucide-react";
-import { getYearFromDate } from "../../../../helpers/format-date-helper";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../../../../components/ui/sheet";
+import { getYearFromDate } from "../../../../../helpers/format-date-helper";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../../../../../components/ui/shadcn/sheet";
 import Commentary from "./commentary";
-import {Avatar, AvatarFallback, AvatarImage} from "../../../../components/ui/avatar";
+import {Avatar, AvatarFallback, AvatarImage} from "../../../../../components/ui/shadcn/avatar";
 
 interface ICommentProps {
 	music: IMusic;
@@ -55,16 +55,16 @@ export function CommentsSheet({music, comments, children, open, onOpenChange}: I
 				</SheetHeader>
 
 				<div className="mx-auto my-3 flex items-center gap-10">
-					<Button variant="ghost" size="icon" className="h-12 w-12 text-white/70 hover:text-white [&_svg]:size-8">
+					<Button variant="ghost" size="icon" className="size-12 text-white/70 hover:text-white [&_svg:not([class*='size-'])]:size-5 hover:cursor-pointer">
 						<Heart />
 					</Button>
-					<Button variant="ghost" size="icon" className="h-12 w-12 text-white/70 hover:text-white [&_svg]:size-8">
+					<Button variant="ghost" size="icon" className="size-12 text-white/70 hover:text-white [&_svg:not([class*='size-'])]:size-5 hover:cursor-pointer">
 						<MessageSquarePlus />
 					</Button>
-					<Button variant="ghost" size="icon" className="h-12 w-12 text-white/70 hover:text-white [&_svg]:size-8">
+					<Button variant="ghost" size="icon" className="size-12 text-white/70 hover:text-white [&_svg:not([class*='size-'])]:size-5 hover:cursor-pointer">
 						<Bookmark />
 					</Button>
-					<Button variant="ghost" size="icon" className="h-12 w-12 text-white/70 hover:text-white [&_svg]:size-8">
+					<Button variant="ghost" size="icon" className="size-12 text-white/70 hover:text-white [&_svg:not([class*='size-'])]:size-5 hover:cursor-pointer">
 						<CircleAlert />
 					</Button>
 				</div>

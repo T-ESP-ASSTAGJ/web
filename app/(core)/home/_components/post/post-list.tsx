@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Post from "./post";
 import type { IPost } from "../../_types/post.types";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import {useAppStore} from "@/stores/use-app-store";
 
 interface PostListProps {
     posts: IPost[];
@@ -12,6 +13,8 @@ interface PostListProps {
 export const PostList = ({ posts }: PostListProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [index, setIndex] = useState(0);
+
+    const setBg = useAppStore((s) => s.updateActualBackgroundBlur);
 
     const clamp = (n: number) => Math.max(0, Math.min(posts.length - 1, n));
 
@@ -63,14 +66,19 @@ export const PostList = ({ posts }: PostListProps) => {
         return () => window.removeEventListener("keydown", onKey);
     }, [index, scrollToIndex]);
 
+    useEffect(() => {
+        const uri = posts[index]?.music.music_cover ?? "";
+        setBg(uri);
+    }, [index, posts, setBg]);
+
     return (
         <div className="relative">
             <div
                 ref={containerRef}
-                className="fixed inset-0 z-0 overflow-y-scroll overscroll-contain snap-y snap-mandatory scrollbar-hide"
+                className="fixed inset-0 z-0 max-w-3xl mx-auto overflow-y-scroll overscroll-contain snap-y snap-mandatory scrollbar-hide"
             >
                 {posts.map((p) => (
-                    <div key={p.id} className="h-dvh snap-start flex">
+                    <div key={p.id} className="relative h-dvh snap-start flex">
                         <div className="mx-auto w-full max-w-2xl flex items-center justify-center px-4">
                             <Post post={p} />
                         </div>

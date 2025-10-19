@@ -2,7 +2,7 @@ import {PostFooter} from "./post-footer";
 import {PostHeader} from "./post-header";
 import {PostBody} from "./post-body";
 import type {IPost} from "../../_types/post.types";
-import {mock_comments} from "../../../../mock-data/comment";
+import {mock_comments} from "../../../../../mock-data/comment";
 
 type PostProps = {
 	post: IPost;

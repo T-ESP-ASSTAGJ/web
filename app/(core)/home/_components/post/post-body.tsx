@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type {IMusic} from "../../_types/post.types";
+import {useAppStore} from "@/stores/use-app-store";
 
 type PostBodyProps = {
 	music: IMusic;
@@ -10,12 +11,20 @@ type PostBodyProps = {
 };
 
 export const PostBody = ({ music, photo }: PostBodyProps) => {
+    const { updateActualBackgroundBlur } = useAppStore();
 	const [showPhoto, setShowPhoto] = React.useState(false);
 
-	const toggle = () => setShowPhoto((s) => !s);
+	const toggle = () => {
+        setShowPhoto((s) => !s);
+        if(showPhoto) {
+            updateActualBackgroundBlur(music.music_cover);
+        }else {
+            updateActualBackgroundBlur(photo);
+        }
+    };
 
 	return (
-		<div className="relative mx-auto flex h-[640px] w-[640px] select-none items-center justify-center">
+		<div className="relative mx-auto flex size-[500px] select-none items-center justify-center">
 			<div
 				className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 shadow-sm"
 				style={{ borderWidth: 3, borderColor: "rgba(50,50,50,0.4)" }}
