@@ -1,12 +1,17 @@
-/*const fetchUsers = async () => {
-	try {
-		const res = await fetch(`https://localhost/api/users`);
-		const data = await res.json();
-		console.log("Users:", data);
-	} catch (err) {
-		console.error("Erreur API:", err);
-	}
-};*/
+"use client"
+
+import {useEffect} from "react";
+
+const fetchUsers = async () => {
+    /*const fetchUsers = async () => {
+        try {
+            const res = await fetch(`https://localhost/api/users`);
+            const data = await res.json();
+            console.log("Users:", data);
+        } catch (err) {
+            console.error("Erreur API:", err);
+        }
+};
 
 export default async function RootPage() {
 	/*const users = await fetchUsers();
