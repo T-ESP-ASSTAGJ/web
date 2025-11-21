@@ -5,12 +5,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--font-sans: "Inter", "Plus_Jakarta_Sans", ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans: "Inter", "Plus_Jakarta_Sans", ui-sans-serif, system-ui,
+		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+
+	@keyframes fade-slide-in {
+		from {
+			opacity: 0;
+			filter: blur(8px);
+			transform: translate(16px, 12px); /* X, Y */
+		}
+		to {
+			opacity: 1;
+			filter: blur(0);
+			transform: translate(0, 0);
+		}
+	}
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	--animate-fade-up: fade-up 500ms ease-out both;
+	--animate-element: fade-slide-in 500ms ease-out both;
 }
 
 html,
 body {
+	overscroll-behavior: none;
 	@apply bg-white dark:bg-[#181818];
 
 	@media (prefers-color-scheme: dark) {
@@ -134,7 +163,9 @@ body {
 	}
 }
 
-.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
 .scrollbar-hide {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
