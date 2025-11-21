@@ -438,33 +438,3 @@ function SiteFooter() {
 		</footer>
 	);
 }
-
-/*
-/!*const fetchUsers = async () => {
-	try {
-		const res = await fetch(`https://localhost/api/users`);
-		const data = await res.json();
-		console.log("Users:", data);
-	} catch (err) {
-		console.error("Erreur API:", err);
-	}
-};*!/
-
-import { Header } from "@/components/ui/vitrine/header";
-import { Navbar } from "@/components/ui/vitrine/navbar";
-
-export default async function RootPage() {
-	/!*const users = await fetchUsers();
-
-	console.log(users);*!/
-
-	return (
-		<main className={"w-screen h-auto bg-white"}>
-			<Navbar />
-
-			<Header />
-
-			<div className={"w-screen h-screen bg-white"} />
-		</main>
-	);
-}
