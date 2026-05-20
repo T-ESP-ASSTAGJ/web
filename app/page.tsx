@@ -95,47 +95,16 @@ export default function HomePage() {
                             </div>
                         </section>
 
-                        {/* Phone mockup + floating glass cards */}
-                        <section className={"relative w-full flex justify-center items-center py-20"}>
-                            <div className="relative w-full max-w-5xl flex justify-center">
-                                {/* Subtle ambient — soft, not a giant disc */}
-                                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[280px] w-[280px] rounded-full bg-fuchsia-500/[0.12] blur-[100px]"/>
+                        {/* Hero mockup + floating cards */}
+                        <section className={"relative w-full flex justify-center items-center py-12 md:py-20 px-4"}>
+                            <div className="relative w-full max-w-3xl">
+                                {/* Soft ambient behind */}
+                                <div className="absolute inset-x-10 top-1/2 -translate-y-1/2 -z-10 h-[60%] rounded-full bg-fuchsia-500/[0.10] blur-[80px] hidden md:block"/>
 
-                                {/* Left card — Now playing */}
-                                <div className="hidden md:flex absolute left-[5%] top-[18%] animate-float [animation-delay:-1s]">
-                                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-xl px-4 py-3 shadow-[0_8px_40px_-12px_rgba(192,132,252,0.4)]">
-                                        <div className="h-11 w-11 rounded-lg bg-gradient-to-br from-fuchsia-400 to-purple-600"/>
-                                        <div className="flex flex-col">
-                                            <span className="text-[10px] uppercase tracking-widest text-fuchsia-300">Now playing</span>
-                                            <span className="text-sm text-white font-medium">Bonbon · GIMS</span>
-                                        </div>
-                                        <div className="flex items-end gap-0.5 ml-2 h-5">
-                                            {[0.5, 0.9, 0.4, 0.8, 0.6].map((h, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="w-[3px] bg-fuchsia-400 rounded-full animate-float"
-                                                    style={{ height: `${h * 100}%`, animationDuration: `${0.8 + i * 0.15}s`, animationDelay: `${i * 0.1}s` }}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Right top — Friend listening */}
-                                <div className="hidden md:flex absolute right-[6%] top-[10%] animate-float">
-                                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-xl px-4 py-3">
-                                        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 border-2 border-background"/>
-                                        <div className="flex flex-col">
-                                            <span className="text-xs text-white/80"><span className="font-semibold text-white">Léa</span> just shared</span>
-                                            <span className="text-[11px] text-muted">a moment · 2 min ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Right bottom — Sound match */}
-                                <div className="hidden md:flex absolute right-[3%] bottom-[18%] animate-float [animation-delay:-2s]">
-                                    <div className="flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-500/[0.08] backdrop-blur-xl px-4 py-2">
-                                        <span className="text-lg">♪</span>
+                                {/* Floating card — Sound twin match (top-left, desktop only) */}
+                                <div className="hidden md:flex absolute -left-16 lg:-left-24 top-[15%] z-20 animate-float [animation-delay:-1s]">
+                                    <div className="flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-500/[0.10] backdrop-blur-md px-4 py-2 shadow-[0_8px_30px_-10px_rgba(192,132,252,0.5)]">
+                                        <span className="text-lg leading-none">♪</span>
                                         <div className="flex flex-col leading-tight">
                                             <span className="text-[10px] uppercase tracking-widest text-fuchsia-300">Sound twin</span>
                                             <span className="text-sm text-white font-medium">98% match</span>
@@ -143,16 +112,52 @@ export default function HomePage() {
                                     </div>
                                 </div>
 
-                                {/* Left bottom — tag chips */}
-                                <div className="hidden md:flex flex-col gap-2 absolute left-[2%] bottom-[15%] animate-float [animation-delay:-1.5s]">
-                                    {["#indie", "#latenight", "#paris"].map((t) => (
-                                        <span key={t} className="self-start rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md px-3 py-1 text-xs text-white/80">{t}</span>
+                                {/* Floating card — Tag chips (bottom-left) */}
+                                <div className="hidden md:flex flex-col gap-2 absolute -left-12 lg:-left-20 bottom-[10%] z-20 animate-float [animation-delay:-1.8s]">
+                                    {["#indie", "#latenight"].map((t) => (
+                                        <span key={t} className="self-start rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-md px-3 py-1 text-xs text-white/80">{t}</span>
                                     ))}
                                 </div>
 
-                                {/* Phone */}
-                                <div className="relative animate-float">
-                                    <Image src={"/mock.png"} alt={"Jamly app preview"} width={360} height={360} priority/>
+                                {/* Floating card — Live listeners (top-right) */}
+                                <div className="hidden md:flex absolute -right-12 lg:-right-20 top-[8%] z-20 animate-float">
+                                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-md px-3 py-2">
+                                        <span className="relative flex h-2 w-2">
+                                            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"/>
+                                            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"/>
+                                        </span>
+                                        <span className="text-xs text-white/90"><span className="font-semibold text-white">+1,200</span> listening now</span>
+                                    </div>
+                                </div>
+
+                                {/* Floating card — Equalizer (bottom-right) */}
+                                <div className="hidden md:flex absolute -right-10 lg:-right-16 bottom-[15%] z-20 animate-float [animation-delay:-2.4s]">
+                                    <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md px-3 py-2">
+                                        <div className="flex items-end gap-0.5 h-5">
+                                            {[0.5, 0.9, 0.4, 0.8, 0.6].map((h, i) => (
+                                                <span
+                                                    key={i}
+                                                    className="w-[3px] bg-fuchsia-400 rounded-full"
+                                                    style={{ height: `${h * 100}%` }}
+                                                />
+                                            ))}
+                                        </div>
+                                        <span className="text-xs text-white/80">Playing</span>
+                                    </div>
+                                </div>
+
+                                {/* The image */}
+                                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_80px_-20px_rgba(192,132,252,0.35)]">
+                                    <Image
+                                        src={"/hero-mockup.jpeg"}
+                                        alt={"Two friends sharing music moments on Jamly"}
+                                        width={1252}
+                                        height={705}
+                                        sizes="(max-width: 768px) 100vw, 700px"
+                                        className="w-full h-auto"
+                                        priority
+                                    />
+                                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-background/80"/>
                                 </div>
                             </div>
                         </section>
