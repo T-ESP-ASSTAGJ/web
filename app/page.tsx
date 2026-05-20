@@ -2,7 +2,6 @@ import {ParticlesBackground} from "@/components/particles-backgroud";
 import {Navbar} from "@/components/navbar";
 import MainButton from "@/components/ui/main-button";
 import {FooterBlurGradient} from "@/components/footer-blur-gradient";
-import {VideoPresentationSection} from "@/components/landing/video-presentation-section";
 import {FeaturesSection} from "@/components/landing/features-section";
 import {FooterSection} from "@/components/landing/footer-section";
 import {WordRotate} from "@/components/ui/magic-ui/word-rotate";
@@ -18,12 +17,11 @@ export default function HomePage() {
 
             <main className="flex w-full flex-col items-center justify-between sm:items-start">
                 <div className={"relative w-full h-auto"}>
-                    {/* Aurora + ambient glow */}
-                    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[1100px] h-[1100px] rounded-full bg-purple-600/[0.10] blur-[200px] animate-aurora"/>
-                        <div className="absolute top-[15%] right-[15%] w-[600px] h-[600px] rounded-full bg-fuchsia-500/[0.08] blur-[180px] animate-aurora [animation-duration:30s]"/>
-                        <div className="absolute top-[40%] left-[10%] w-[500px] h-[500px] rounded-full bg-pink-500/[0.07] blur-[160px] animate-aurora [animation-duration:26s] [animation-direction:reverse]"/>
-                        {/* subtle grid */}
+                    {/* Aurora + grid — desktop only (perf) */}
+                    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block motion-reduce:hidden">
+                        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[1100px] h-[1100px] rounded-full bg-purple-600/[0.10] blur-[120px] animate-aurora"/>
+                        <div className="absolute top-[15%] right-[15%] w-[600px] h-[600px] rounded-full bg-fuchsia-500/[0.08] blur-[100px] animate-aurora [animation-duration:30s]"/>
+                        <div className="absolute top-[40%] left-[10%] w-[500px] h-[500px] rounded-full bg-pink-500/[0.07] blur-[100px] animate-aurora [animation-duration:26s] [animation-direction:reverse]"/>
                         <div
                             className="absolute inset-0 opacity-[0.04]"
                             style={{
@@ -34,6 +32,11 @@ export default function HomePage() {
                                     "radial-gradient(ellipse at 50% 30%, black 40%, transparent 75%)",
                             }}
                         />
+                    </div>
+                    {/* Mobile: static lightweight glow */}
+                    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden md:hidden">
+                        <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] rounded-full bg-purple-600/[0.18] blur-[70px]"/>
+                        <div className="absolute top-[35%] -right-[15%] w-[280px] h-[280px] rounded-full bg-fuchsia-500/[0.15] blur-[70px]"/>
                     </div>
 
                     <div className={"relative z-10"}>
