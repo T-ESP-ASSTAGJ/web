@@ -16,10 +16,10 @@ export function WordRotate({
   words,
   duration = 2500,
   motionProps = {
-    initial: { opacity: 0, y: -50 },
+    initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 50 },
-    transition: { duration: 0.25, ease: "easeOut" },
+    exit: { opacity: 0, y: 20 },
+    transition: { duration: 0.2, ease: "easeOut" },
   },
   className,
 }: WordRotateProps) {
@@ -29,17 +29,18 @@ export function WordRotate({
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length)
     }, duration)
-
-    // Clean up interval on unmount
     return () => clearInterval(interval)
   }, [words, duration])
 
   return (
     <span className="relative inline-block align-baseline leading-[1.3]">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={words[index]}
-          className={cn("inline-block leading-[1.3] py-[0.1em] pr-[0.05em]", className)}
+          className={cn(
+            "inline-block leading-[1.3] py-[0.1em] pr-[0.05em] [transform:translateZ(0)] [will-change:transform,opacity]",
+            className,
+          )}
           {...motionProps}
         >
           {words[index]}
