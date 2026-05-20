@@ -36,7 +36,11 @@ export function ParticlesBackground() {
     const [particles, setParticles] = React.useState<Particle[]>([]);
 
     useEffect(() => {
-        setParticles(generateParticles(25));
+        if (typeof window === 'undefined') return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) return;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        setParticles(generateParticles(isMobile ? 8 : 25));
     }, []);
 
     return (
