@@ -149,7 +149,7 @@ export default function HomePage() {
                                 {/* The image */}
                                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_80px_-20px_rgba(192,132,252,0.35)]">
                                     <Image
-                                        src={"/hero-mockup.jpeg"}
+                                        src={"/hero-mockup.webp"}
                                         alt={"Two friends sharing music moments on Jamly"}
                                         width={1252}
                                         height={705}
