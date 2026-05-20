@@ -51,7 +51,7 @@ export const FeaturesSection = () => {
     }, {scope: containerRef})
 
     return (
-        <section id={"features"} ref={containerRef} className={"flex flex-col gap-y-20 mt-20 lg:mt-72"}>
+        <section id={"features"} ref={containerRef} className={"flex flex-col gap-y-20 mt-20 lg:mt-30"}>
             <Feature
                 index={1}
                 accentColor={"from-fuchsia-500/20 to-purple-600/10"}
@@ -62,7 +62,15 @@ export const FeaturesSection = () => {
                 subtitle={"Share what you're listening to with a single tap."}
                 description={"Your song becomes a post, your playlist becomes a conversation. One track can spark a thousand reactions."}
                 bullets={["One-tap share", "Auto cover art", "Spotify & Apple Music"]}
-                mockup={<PostMockup/>}
+                mockup={<PostMockup
+                    image="/mockups/post-main.webp"
+                    selfie="/mockups/post-selfie.png"
+                    cover="/mockups/post-cover.jpeg"
+                    avatar="/mockups/post-avatar.png"
+                    username="lea.paris"
+                    trackTitle="Bonbon"
+                    trackArtist="GIMS"
+                />}
             />
             <Feature
                 index={2}
@@ -74,7 +82,10 @@ export const FeaturesSection = () => {
                 subtitle={"Snap your vibe from both cameras."}
                 description={"Show the world what you see and how you look while the music plays. Real moments, real sounds."}
                 bullets={["Dual camera", "0.3s capture", "Live soundtrack"]}
-                mockup={<CaptureMockup/>}
+                mockup={<CaptureMockup
+                    backImage="/mockups/capture-front.jpg"
+                    frontImage="/mockups/capture-back.jpg"
+                />}
             />
             <Feature
                 index={3}
@@ -86,7 +97,11 @@ export const FeaturesSection = () => {
                 subtitle={"No more silent scrolling."}
                 description={"Every post plays, every story has a soundtrack. Your feed finally has a voice \u2014 and it sounds exactly like your friends."}
                 bullets={["Audio-first feed", "Smart mute", "Endless discovery"]}
-                mockup={<FeedMockup/>}
+                mockup={<FeedMockup tracks={[
+                    {title: "Sicko Mode", artist: "Travis Scott", cover: "/mockups/travis-scott-cover.jpg", opacity: 0.5},
+                    {title: "Starboy ft. Daft Punk", artist: "The Weeknd", cover: "/mockups/the-weeknd-cover.jpg", opacity: 0.78},
+                    {title: "Ceinture Noir", artist: "Maitre Gims", cover: "/mockups/maitre-gims-cover.jpeg"},
+                ]}/>}
             />
             <Feature
                 index={4}
