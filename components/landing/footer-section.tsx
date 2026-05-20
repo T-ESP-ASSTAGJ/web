@@ -5,15 +5,18 @@ import MainButton from "@/components/ui/main-button";
 export const FooterSection = () => {
     return (
         <section id={"get-the-app"} className={"relative w-screen h-auto flex flex-col my-28"}>
-            {/* Background halo */}
-            <div className="absolute inset-0 -z-0 pointer-events-none overflow-hidden">
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-purple-600/[0.10] blur-[180px]"/>
-                <div className="absolute left-1/3 top-1/4 w-[400px] h-[400px] rounded-full bg-pink-500/[0.10] blur-[140px]"/>
-                <div className="absolute right-1/4 bottom-1/4 w-[420px] h-[420px] rounded-full bg-fuchsia-500/[0.08] blur-[150px]"/>
+            {/* Background halo — desktop only */}
+            <div className="absolute inset-0 -z-0 pointer-events-none overflow-hidden hidden md:block">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-purple-600/[0.10] blur-[120px]"/>
+                <div className="absolute left-1/3 top-1/4 w-[400px] h-[400px] rounded-full bg-pink-500/[0.10] blur-[100px]"/>
+                <div className="absolute right-1/4 bottom-1/4 w-[420px] h-[420px] rounded-full bg-fuchsia-500/[0.08] blur-[100px]"/>
+            </div>
+            <div className="absolute inset-0 -z-0 pointer-events-none overflow-hidden md:hidden">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-purple-600/[0.18] blur-[70px]"/>
             </div>
 
             <div className={"relative z-10 mx-auto w-11/12 max-w-5xl"}>
-                <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] backdrop-blur-xl px-8 py-16 overflow-hidden">
+                <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] md:backdrop-blur-xl px-8 py-16 overflow-hidden">
                     {/* Inner gradient sweep */}
                     <div className="absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_top,rgba(192,132,252,0.18),transparent_60%)]"/>
 
