@@ -6,7 +6,7 @@ import {
     useReducedMotion,
     useScroll,
     useTransform,
-} from "framer-motion";
+} from "motion/react";
 import {PostMockup} from "@/components/landing/mockups/post-mockup";
 
 export const VideoPresentationSection = () => {
