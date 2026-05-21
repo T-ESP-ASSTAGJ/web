@@ -4,6 +4,7 @@ import MainButton from "@/components/ui/main-button";
 import {FooterBlurGradient} from "@/components/footer-blur-gradient";
 import {FeaturesSection} from "@/components/landing/features-section";
 import {FooterSection} from "@/components/landing/footer-section";
+import {FaqSection} from "@/components/faq-section";
 import {WordRotate} from "@/components/ui/magic-ui/word-rotate";
 import Image from "next/image";
 import {LucidePlay, QrCode} from "lucide-react";
@@ -165,8 +166,12 @@ export default function HomePage() {
 
                         {/*FEATURES*/}
                         <FeaturesSection/>
+
+                        {/*FAQ*/}
+                        <FaqSection/>
                     </div>
                 </div>
+
 
                 <FooterSection/>
 
