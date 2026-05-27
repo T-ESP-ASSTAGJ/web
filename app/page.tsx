@@ -97,7 +97,7 @@ export default function HomePage() {
                         </section>
 
                         {/* Hero mockup + floating cards */}
-                        <section className={"relative w-full flex justify-center items-center py-12 md:py-20 px-4"}>
+                        <section id={"discover"} className={"relative w-full flex justify-center items-center py-12 md:py-20 px-4"}>
                             <div className="relative w-full max-w-3xl">
                                 {/* Soft ambient behind */}
                                 <div className="absolute inset-x-10 top-1/2 -translate-y-1/2 -z-10 h-[60%] rounded-full bg-fuchsia-500/[0.10] blur-[80px] hidden md:block"/>
