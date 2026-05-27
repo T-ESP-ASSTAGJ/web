@@ -73,9 +73,9 @@ export default function HomePage() {
                                         <MainButton size="xl" className="bg-white text-black shadow-[0_0_60px_-15px_rgba(192,132,252,0.6)]" leftIcon={<QrCode className={"mr-2"} color={"black"} size={17}/>}>
                                             Get The App
                                         </MainButton>
-                                        <MainButton size="xl" variant="secondary" leftIcon={<LucidePlay className={"mr-2"} fill={"white"} size={16}/>}>
+                                        {/*<MainButton size="xl" variant="secondary" leftIcon={<LucidePlay className={"mr-2"} fill={"white"} size={16}/>}>
                                             Watch The Demo
-                                        </MainButton>
+                                        </MainButton>*/}
                                     </div>
                                     <p className="text-xs text-muted/80">Be a part of the next early access cohort.</p>
                                 </div>
